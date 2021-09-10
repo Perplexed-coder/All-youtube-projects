@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honeybee effect in letters</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <section>
+        <p class="text">
+            Paragraph on Nature for Students in English [Easy Words*]
+            February 25, 2021 by Karan Kapoor
+            
+            Paragraph on Nature: Though Nature Day is celebrated on the 23rd of April every year, one can presume that every day we live is a celebration and acknowledgement of nature. Nature, in some form or the other, is always present and acting on our life.
+            
+            The below given compositions are useful for essay and paragraph writing competitions for school students.
+            
+            Nature is what we see around us all the time, the green trees and plants, the blue sky with the white clouds, the dark soil, the river, or the pond, and the animals together make up nature. Whether we realize or not, nature plays an enormous and inevitable role in our life. Nature is our provider; it gives us almost all the basic things we need. Everything that we use has its roots in nature.
+            
+            Nature has inspired us in many ways, given us many ideas, and opened to us a lot of perspectives. Newton was able to discover gravity because of nature, and various great poets wrote beautiful poems after being inspired by nature and its different aspects. And this is the reason why nature is often referred to as a mother and worshipped in various religions. We should respect nature for all that it gives us and always look forward to protecting it and valuing it.  
+        </p>
+  
+    </section>
+    <script src="https://github.com/juliangarnier/anime/blob/master/lib/anime.min.js"></script>
+    <script>
+        const text=document.querySelector('.text');
+        text.innerHTML=text.textContent.replace(/\S/g,"<span>$&</span>");
+        const animation=anime.timeline({
+            targets:'.text span',
+            easeing: 'easeInoOutExpo',
+            loop:true,
+        });
+        animation
+        .add({
+            rotate:function(){
+                return anime.random(-360,360)
+            },
+            translateX:function(){
+                return anime.random(-500,500)
+            },
+            translateY:function(){
+                return anime.random(-500,500)
+            },
+            duration:5000,
+            delay:anime.stagger(20),
+
+
+
+        })
+        .add({
+            rotate:0,
+            translateX:0,
+            translateY:0,
+            duration:5000,
+            delay:anime.stagger(20),
+            
+
+
+        })
+    </script>
+</body>
+</html>
