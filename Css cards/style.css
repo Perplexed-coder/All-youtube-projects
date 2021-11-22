@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+    background:linear-gradient(45deg, #f9fafa 0%,#fdf9f9 100%);
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.center,.front-face,.contents,.back-face{
+    position:absolute;
+
+}
+.center{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:370px;
+
+    height:600px;
+    transform-style: preserve-3d;
+}
+.front-face,.back-face{
+    height:100%;
+    width:100%;
+    text-align: center;
+    background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.2)),url(https://i.ibb.co/rxvxcjm/Wallpaper-Dog-496212.jpg);
+    background-size: cover;
+    background-position:center ;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform .7s cubic-bezier(.4,.2,.2,.1);
+}
+.contents{
+    left:0;
+    top:50%;
+    width:100%;
+    perspective:100px;
+    transform: translateY(-50%) translateZ(60px) scale(.94);
+    perspective: 100px;
+}
+.front p{
+    color:rgb(252, 250, 250);
+    font-size:35px;
+    margin-border:15px;
+}
+.front p:after{
+   content:'';
+   display: block;
+   left:0;
+   right:0;
+   height:2px;
+   width:100px;
+   background:white;
+   margin:0 auto;
+   margin-top: 10px;
+}
+.front span{
+    color:white;
+    font-size:22px;
+    
+}
+
+.back-face{
+    transform:rotateY(180deg);
+    background:linear-gradient(45deg, #043348 0%,#032535 100%);
+
+}
+.back{
+    color:white;
+
+}
+.back h2{
+    font-size:33px;
+    padding-bottom: 5px;
+}
+.back span{
+    font-size:25px;    
+}
+.icons{
+    margin:10px 0;
+}
+.icons .fa{
+    color:#042f46;
+    font-size: 20px;
+    height: 40px;
+    width:40px;
+    background:white ;
+    border-radius: 50%;
+    line-height: 40px;
+    margin:0 5px;
+}
+
+.center:hover>.back-face{
+    transform:rotateY(0deg);
+}
+.center:hover>.front-face{
+    transform:rotateY(-180deg);
+}
